@@ -7,6 +7,7 @@ project/
 │   │   ├── states.rs
 │   │   └── inventory.rs
 │   ├── main.rs
+│   ├── game_loop.rs
 │   ├── utils.rs
 │   ├── init.rs
 │   ├── status.rs
