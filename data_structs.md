@@ -1,6 +1,8 @@
 # Data Structures
 
-## CauseOfDeath
+## states.rs
+
+### CauseOfDeath
 
 ```
 ENUM CauseOfDeath {
@@ -13,34 +15,7 @@ ENUM CauseOfDeath {
 }
 ```
 
-## RationAmount
-
-```
-ENUM RationAmount {
-    Poor,
-    Moderate,
-    Well
-}
-```
-
-Used to flag how well the player ate on the current team.
-
-## Inventory
-
-```
-STRUCT Inventory {
-    oxen: INTEGER,
-    food: INTEGER,
-    bullets: INTEGER,
-    clothing: INTEGER,
-    money: INTEGER,
-    misc: INTEGER
-}
-```
-
-Holds all the player inventory details.
-
-## GameState
+### GameState
 
 ```
 STRUCT GameState {
@@ -57,3 +32,32 @@ STRUCT GameState {
 ```
 
 Primary game state structure holding all relevant game information.
+
+## inventory.rs
+
+### RationAmount
+
+```
+ENUM RationAmount {
+    Poor,
+    Moderate,
+    Well
+}
+```
+
+Used to flag how well the player ate on the current team.
+
+### Inventory
+
+```
+STRUCT Inventory {
+    oxen: INTEGER,
+    food: INTEGER,
+    bullets: INTEGER,
+    clothing: INTEGER,
+    money: INTEGER,
+    misc: INTEGER
+}
+```
+
+Holds all the player inventory details.

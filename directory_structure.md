@@ -2,6 +2,10 @@
 project/
 ├── DOCS/
 ├── src/
+│   ├── data.rs
+│   ├── data/
+│   │   ├── states.rs
+│   │   └── inventory.rs
 │   ├── main.rs
 │   ├── utils.rs
 │   ├── init.rs
