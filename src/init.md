@@ -1,28 +1,49 @@
-// --- Game Setup Functions ---
-// init.rs
+# Game Setup
+Game Setup Functions
 
-// Initializes the GameState object and sets all the initial values
-// {total_miles=2040, miles_traveled=0, turn=0, date="MARCH 29",
-// rations=Moderate, is_sick=false, is_injured=false, inventory=
-// {oxen=0, food=0, bullets=0, clothing=0, money=700, misc=0}
-// difficulty=5}
-// Checks if user wants to view the tutorial, calls tutorial if they do
-// Calls initial purchases function, calls set difficulty function
-// Returns the prepared GameState
-FUNCTION initialize_game() RETURNS GameState
+## init.rs
 
-// Display the game tutorial
-FUNCTION display_tutorial()
+### `FUNCTION initialize_game() RETURNS GameState`
+Initializes the GameState object and sets all the initial values
+* GameState =
+    * total_miles=2040
+    * miles_traveled=0
+    * turn=0
+    * date="MARCH 29",
+    * rations=Moderate
+    * is_sick=false
+    * is_injured=false
+    * inventory=
+        * oxen=0
+        * food=0
+        * bullets=0
+        * clothing=0
+        * money=700
+        * misc=0
+    * difficulty=5
+* Checks if user wants to view the tutorial, calls tutorial if they do
+* Calls initial purchases function
+* calls set difficulty function
+* Returns the prepared GameState
 
-// Handles the initial game purchases. Should check at the end that the
-// total purchases are less than/equal to the amount of money the player has.
-// Also needs to ensure the player spends between 200 and 300 (inclusive) on
-// oxen. Loops until user has made correct purchases
-FUNCTION handle_initial_purchases(game_state: BYREF MUTABLE GameState)
+### `FUNCTION display_tutorial()`
+Displays the game tutorial text
 
-// Sets the game difficulty
-// Should call the get_int_input function with a minimum of 1
-// and a maximum of 5 for the difficulty options. The difficulty
-// number chosen is how many seconds the player has to enter
-// the keyword when doing the shooting subroutine.
-FUNCTION set_difficulty(game_state: BYREF MUTABLE GameState)
+### `FUNCTION handle_initial_purchases(game_state: BYREF MUTABLE GameState)`
+Handles setting up the initial purchases
+* Asks how much the user wants to spend on each inventory item
+* Tracks how much is spent on each item.
+    * Player can only spend between 200 and 300 on Oxen
+    * Checks at the end that the player didn't spend too much and loops if they did
+
+### `FUNCTION set_difficulty(game_state: BYREF MUTABLE GameState)`
+Sets the game difficulty
+* Display difficulty selection text:
+    * "HOW GOOD A SHOT ARE YOU WITH YOUR RIFLE?"
+      "  (1) ACE MARKSMAN,  (2) GOOD SHOT,  (3) FAIR TO MIDDLIIN'"
+      "         (4) NEED MORE PRACTICE,  (5) SHAKY KNEES"
+* Calls the get_int_input with variables:
+    * min = 1
+    * max = 5
+    * prompt = "ENTER ONE OF THE ABOVE -- THE BETTER YOU CLAIM YOU ARE, THE\nFASTER YOU'LL HAVE TO BE WITH YOUR GUN TO BE SUCCESSFUL."
+* Set the GameState difficulty based on return value of the get_int_input function.

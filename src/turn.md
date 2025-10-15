@@ -1,20 +1,15 @@
 # Turn
 ## `turn.rs`
-Handles the turn logic. Declares the sub mods handle_turn, handle_hunting, and handle_fort_visit
-
-## `handle_fort_visits.rs`
+Handles the turn logic.
 
 ### `FUNCTION handle_fort_visit(game_state: BYREF MUTABLE GameState)`
-
-## `handle_hunting.rs`
-Handles the functions related to the hunting minigame.
 
 ### `FUNCTION handle_hunting(game_state: BYREF MUTABLE GameState)`
 
 * Checks if the player has more than 39 bullets
 * The player loses 45 miles of progress to stop and hunt
 * Calls the shooting subroutine
-* If the time taken was <= difficulty:
+* If the time taken was <= 1:
     * Gain between 52 and 58 food
     * Lose between 10 and 14 bullets
     * Display message:
@@ -32,4 +27,6 @@ Handles the functions related to the hunting minigame.
     * Display message:
         > YOU MISSED---AND YOUR DINNER GOT AWAY.....
 
-## `handle_turn.rs`
+### `FUNCTION handle_turn(game_state: GameState)`
+Handles the turn logic, should only show the fort option every odd turn, shows the continue and hunting option on every other turn.
+* Checks the turn number, calls the get_int_input function with prompt for fort if it is an odd turn, calls the get_int_input with only continue and hunt if it is an even turn.
