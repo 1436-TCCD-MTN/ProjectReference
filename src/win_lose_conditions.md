@@ -37,3 +37,5 @@ Displays the correct game over message based on the cause of death.
 * "BETTER LUCK NEXT TIME\n\n"
 * "SINCERELY\n"
 * "THE OREGON CITY CHAMBER OF COMMERCE"
+
+### `FUNCTION display_win(game_state: BYREF GameState)`

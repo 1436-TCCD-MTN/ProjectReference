@@ -35,6 +35,20 @@ Handles setting up the initial purchases
 * Tracks how much is spent on each item.
     * Player can only spend between 200 and 300 on Oxen
     * Checks at the end that the player didn't spend too much and loops if they did
+    * If player tries to spend less than 0:
+    > IMPOSSIBLE
+    > HOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM
+    * Less than 200:
+    > NOT ENOUGH
+    * More than 300:
+    > TOO MUCH
+* Outputs:
+    > HOW MUCH DO YOU WANT TO SPEND ON FOOD
+    > HOW MUCH DO YOU WANT TO SPEND ON AMMUNITION
+    > HOW MUCH DO YOU WANT TO SPEND ON CLOTHING
+    > HOW MUCH DO YOU WANT TO SPEND ON MISCELLANEOUS SUPPLIES
+    >YOU OVERSPENT--YOU ONLY HAD $700 TO SPEND. BUY AGAIN
+    >AFTER ALL YOUR PURCHASES, YOU NOW HAVE {money} DOLLARS LEFT
 
 ### `FUNCTION set_difficulty(game_state: BYREF MUTABLE GameState)`
 Sets the game difficulty
