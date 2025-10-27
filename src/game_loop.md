@@ -2,7 +2,7 @@
 
 ## game_loop.rs
 
-### `FUNCTION game_loop(game_state: BYREF MUTABLE GameState)`
+### `FUNCTION game_loop()`
 Contains the primary loop for the game.
 * Calls the initialize_game function
 * Calls get_yes_no_input with prompt
@@ -15,4 +15,4 @@ Contains the primary loop for the game.
     * Call display_date function
     * Call display_status function
     * Call handle_turn function
-    * Call 
+    * Call
