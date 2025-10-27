@@ -3,21 +3,6 @@ Handles subroutines
 
 ## `subroutines.rs`
 
-### `FUNCTION shooting(game_state: BYREF GameState) RETURNS INTEGER`
-* Displays a random word for the player to type in
-* List:
-    * BANG
-    * BLAM
-    * POW
-    * WHAM
-* Takes current time
-* Accept user input
-* Take current time
-* Time Taken
-    * If incorrect word, Time Taken = 9
-    * Else: Time Taken = (Stop - Start) - (Difficulty - 1)
-* Return Time Taken
-
 ### `FUNCTION illness(game_state: BYREF GameState) RETURNS Option<CauseOfDeath>`
 
 This subroutine determines how sever of an illness the player receives. The outcome is determined by how much food you ate on the previous turn. Eating well provides the best chance of staying healthy.
@@ -41,3 +26,31 @@ This subroutine determines how sever of an illness the player receives. The outc
     * Lose 10 miles
     * Set is_sick flag to true
 * If misc < 0, then Return Some(CauseOfDeath::Disease)
+
+### `FUNCTION shooting(game_state: BYREF GameState) RETURNS INTEGER`
+* Displays a random word for the player to type in
+* List:
+    * BANG
+    * BLAM
+    * POW
+    * WHAM
+* Takes current time
+* Accept user input
+* Take current time
+* Time Taken
+    * If incorrect word, Time Taken = 9
+    * Else: Time Taken = (Stop - Start) - (Difficulty - 1)
+* Return Time Taken
+
+### `FUNCTION shopping(item: STRING, game_state: BYREF GameState)`
+This subroutine handles shopping for supplies at a fort.
+* Creates a formatted string for the user prompt
+  > ENTER WHAT YOU WISH TO SPEND ON THE FOLLOWING
+  > {item}
+* Calls the get_int_input function, passing in min 0 and max as 1000
+* On the return, if the amount input is greater than the player's money, output:
+    > YOU DON'T HAVE THAT MUCH--KEEP YOUR SPENDING DOWN
+    > YOU MISS YOUR CHANCE TO SPEND ON THAT ITEM
+* Else, deduct the amount spent from the player's total money and add the appropriate amount of supplies:
+    * Ammo: amount_spent * 2/3 * 50
+    * Everything else: amount_spent * 2/3
