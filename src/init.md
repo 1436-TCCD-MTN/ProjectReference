@@ -21,9 +21,9 @@ Initializes the GameState object and sets all the initial values
         * money=700
         * misc=0
     * difficulty=5
-* Checks if user wants to view the tutorial, calls tutorial if they do
-* Calls initial purchases function
-* calls set difficulty function
+* Checks if user wants to view the tutorial, calls display_tutorial if they do
+* Calls handle_initial_purchases function
+* calls set_difficulty function
 * Returns the prepared GameState
 
 ### `FUNCTION display_tutorial()`
