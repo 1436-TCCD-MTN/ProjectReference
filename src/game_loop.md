@@ -13,3 +13,6 @@ Contains the primary loop for the game.
 * Call handle_initial_purchases function
 * Start loop
     * Call display_date function
+    * Call display_status function
+    * Call handle_turn function
+    * Call 

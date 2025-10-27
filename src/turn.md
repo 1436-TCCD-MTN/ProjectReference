@@ -2,6 +2,18 @@
 ## `turn.rs`
 Handles the turn logic.
 
+### `FUNCTION handle_eating(game_state: BYREF MUTABLE GameState)`
+Prompts the player how much to eat.
+* Create formatted string for prompt:
+    > DO YOU WANT TO EAT (1) POORLY (2) MODERATELY
+    > OR (3) WELL
+* Create a successful eating boolean set to false
+* Call get_int_input with prompt
+* Set food = food - 8 - 5 * choice
+    * If food < 0, set food back to food + 8 + 5 * choice and display message:
+        > YOU CAN'T EAT THAT WELL
+    * Loop until they choose correctly
+
 ### `FUNCTION handle_fort_visit(game_state: BYREF MUTABLE GameState)`
 For each supply item, call the purchase subroutine with the name of the item
 * FOOD, AMMUNITION, CLOTHING, MISCELLANEOUS SUPPLIES
