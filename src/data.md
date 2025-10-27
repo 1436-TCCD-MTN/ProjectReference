@@ -54,6 +54,7 @@ STRUCT GameState {
 ```
 STRUCT GameState {
     total_miles: INTEGER,
+    miles_through_prev: INTEGER,
     miles_traveled: INTEGER,
     turn: INTEGER,
     date: STRING,
