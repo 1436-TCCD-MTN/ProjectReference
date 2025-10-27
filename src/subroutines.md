@@ -15,14 +15,14 @@ This subroutine determines how sever of an illness the player receives. The outc
     * You gain a mild illness
     * Lose 5 miles
     * Lose 2 misc supplies
-    * "MILD ILLNESS---MEDICINE USED"
+    > MILD ILLNESS---MEDICINE USED
 * Generate a new random number between 1 and 100
 * If num < 100 - (40/(4^(E-1)))
     * Lose 5 miles
     * Lose 2 misc supplies
-    * "BAD ILLNESS---MEDICINE USED"
+    > BAD ILLNESS---MEDICINE USED
 * If both of the above checks are false, then the following happens:
-    * "SERIOUS ILLNESS---YOU MUST STOP FOR MEDICAL ATTENTION"
+    > SERIOUS ILLNESS---YOU MUST STOP FOR MEDICAL ATTENTION
     * Lose 10 miles
     * Set is_sick flag to true
 * If misc < 0, then Return Some(CauseOfDeath::Disease)
