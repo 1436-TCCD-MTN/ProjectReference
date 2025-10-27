@@ -3,6 +3,8 @@
 Handles the turn logic.
 
 ### `FUNCTION handle_fort_visit(game_state: BYREF MUTABLE GameState)`
+For each supply item, call the purchase subroutine with the name of the item
+* FOOD, AMMUNITION, CLOTHING, MISCELLANEOUS SUPPLIES
 
 ### `FUNCTION handle_hunting(game_state: BYREF MUTABLE GameState)`
 
