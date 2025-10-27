@@ -15,10 +15,9 @@ Handles the Event Checking Logic. Declares the sub mods checks, weather, wagon, 
 * Runs a check to see if they _look_ hostile: random number between 0 and 1 < 0.8
 * Sets a flag, true for looks hostile, false for looks friendly
 * Output:
-```bash
-TACTICS
-(1) RUN (2) ATTACK (3) CONTINUE (4) CIRCLE WAGONS
-```
+> TACTICS
+> () RUN (2) ATTACK (3) CONTINUE (4) CIRCLE WAGONS
+
 * After the output, determine if the riderss are actually hostile:
     * generate random number between 0 and 1, > 0.2 then flag = !flag to flip it
 * Take user input and resolve based on their choice.
@@ -69,7 +68,7 @@ Handles the outcomes of the player's choice and the riders' hostility.
             * Lose 150 bullets
             * Lose 15 misc supplies
         * Else:
-            * "THEY DID NOT ATTACK"
+            > THEY DID NOT ATTACK
             * Return
     * 4
         * Call the shooting subroutine

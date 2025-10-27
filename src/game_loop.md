@@ -15,4 +15,6 @@ Contains the primary loop for the game.
     * Call display_date function
     * Call display_status function
     * Call handle_turn function
-    * Call
+    * Call handle_eating function
+    * Call check_for_riders function
+    * Call check_for_event function
