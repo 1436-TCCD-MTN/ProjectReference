@@ -27,6 +27,11 @@ Displays the current player status
         * else:
             * Set cause of death flag to NoMoney and return
 * Output: "TOTAL MILEAGE IS {miles_traveled}"
-* Output: "
+* Output: "FOOD\tBULLETS\tCLOTHING\tMISC. SUPP.\tCASH"
+* Output: values for the above
+
 
 ### `FUNCTION calculate_mileage(game_state: BYREF MUTABLE GameState)`
+Calculates how far the player has traveled in 2 weeks.
+* Uses the following equation:
+   * Miles = Miles + 200 + (OxenAmount - 200)/3 + random between 1..10
