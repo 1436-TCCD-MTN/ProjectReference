@@ -194,6 +194,30 @@ This function is the main entry point for all the random events. It will generat
 
 ## mountains.rs
 
+### `FUNCTION mountain_encounter_check(game_state: BYREF MUTABLE GameState) RETURNS Option<CauseOfDeath>`
+Checks if the player has gotten to 950 miles, returns if less than 950 miles. If over 950 miles then it runs a check to see if the player encounters the rugged mountains event.
+* If mileage >= 950 miles:
+   * Check if random number between 1..10 <= 9 - ((Mileage/100 - 15)^2 + 72) / ((Mileage / 100 - 15)^2 + 12)
+      * True: Call rugged mountains event
+      * False: if Flag::has_cleared_south_pass
+         * True: If Mileage > 1700 and not Flag::has_cleared_blue_mtn
+            * True: Call blue mountains event
+
+### `FUNCTION rugged_mountains(game_state: BYREF MUTABLE GameState) RETURNS Option<CauseOfDeath>`
+
+### `FUNCTION blue_mountains(game_state: BYREF MUTABLE GameState) RETURNS Option<CauseOfDeath>`
+* Set Flag::has_cleared_blue_mtn
+* Check random number between 1 and 10 < .7
+   * True:
+      > BLIZZARD IN MOUNTAIN PASS--TIME AND SUPPLIES LOST
+      * Set flag for blizzard
+      * Set food = food - 25
+      * Set Misc = Misc - 10
+      * Set Bullets = Bullets - 300
+      * Miles = Miles - 30 - random between 1..40
+      * If clothing < 18 + random 1..2
+         * Illness Check
+
 ## riders.rs
 
 Handles the outcomes of the player's choice and the riders' hostility.
@@ -248,3 +272,4 @@ Handles the outcomes of the player's choice and the riders' hostility.
         * Lose 20 miles
     * Final Result:
         > RIDERS WERE FRIENDLY, BUT CHECK FOR POSSIBLE LOSSES
+
