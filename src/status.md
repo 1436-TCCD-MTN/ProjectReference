@@ -12,6 +12,7 @@ Uses the turn number to iterate on the game date
 Prints the date formatted for the status display
 * Checks if on turn 20
      > YOU HAVE BEEN ON THE TRAIL TOO LONG ------
+     > 
      > YOUR FAMILY DIES IN THE FIRST BLIZZARD OF WINTER
      * Return Some(Freezing)
 * Prints "MONDAY {date} 1847"
@@ -40,4 +41,5 @@ Displays the current player status
 Calculates how far the player has traveled in 2 weeks.
 * Uses the following equation:
    * Miles = Miles + 200 + (OxenAmount - 200)/3 + random between 1..10
+
 
