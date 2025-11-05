@@ -8,9 +8,14 @@ Uses the turn number to iterate on the game date
     * MARCH 29, APRIL 12, APRIL 26, MAY 10, MAY 24, JUNE 7, JUNE 21, JULY 5, JULY 19, AUGUST 2, AUGUST 16, AUGUST 31, SEPTEMBER 13, SEPTEMBER 27, OCTOBER 11, OCTOBER 25, NOVEMBER 8, NOVEMBER 22, DECEMBER 6, DECEMBER 20
 * Return dates[turn]
 
-### `FUNCTION print_date(date: BYREF STRING)`
+### `FUNCTION print_date(date: BYREF STRING) -> Option<CauseOfDeath>`
 Prints the date formatted for the status display
+* Checks if on turn 20
+     > YOU HAVE BEEN ON THE TRAIL TOO LONG ------
+     > YOUR FAMILY DIES IN THE FIRST BLIZZARD OF WINTER
+     * Return Some(Freezing)
 * Prints "MONDAY {date} 1847"
+* Return None 
 
 ### `PUBLIC FUNCTION display_status(game_state: BYREF GameState)`
 Displays the current player status
@@ -35,3 +40,4 @@ Displays the current player status
 Calculates how far the player has traveled in 2 weeks.
 * Uses the following equation:
    * Miles = Miles + 200 + (OxenAmount - 200)/3 + random between 1..10
+
