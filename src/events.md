@@ -12,15 +12,20 @@ Handles the Event Checking Logic. Declares the sub mods checks, weather, wagon, 
     * b = (a + 72) / (a * 12)
     * c = b - 1
     * Riders spotted if num <= c
-* Runs a check to see if they _look_ hostile: random number between 0 and 1 < 0.8
+* Runs a check to see if they _look_ hostile: random number between 1 and 10 < 8
 * Sets a flag, true for looks hostile, false for looks friendly
 * Output:
 > TACTICS
-> () RUN (2) ATTACK (3) CONTINUE (4) CIRCLE WAGONS
+>
+> (1) RUN (2) ATTACK (3) CONTINUE (4) CIRCLE WAGONS
 
 * After the output, determine if the riderss are actually hostile:
-    * generate random number between 0 and 1, > 0.2 then flag = !flag to flip it
-* Take user input and resolve based on their choice.
+    * generate random number between 1 and 10 > 2 then flag = !flag to flip it
+* Take user input
+* If flag is true (hostile):
+    * Call hostile_riders function
+* Else:
+    * Call friendly riders function
 
 ### `FUNCTION check_for_event(game_state: BYREF MUTABLE GameState)`
 This function is the main entry point for all the random events. It will generate a random number between 1 and 100 and choose a random event based on the number generated.
