@@ -222,6 +222,7 @@ Checks if the player has gotten to 950 miles, returns if less than 950 miles. If
 * Set Flag::has_cleared_blue_mtn
 * Check random number between 1 and 10 < .7
    * True:
+        * Call blizzard function
 
 
 ### `FUNCTION blizzard(game_state: BYREF MUTABLE GameState) RETURNS Option<CauseOfDeath>`
