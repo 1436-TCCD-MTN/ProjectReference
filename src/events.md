@@ -9,7 +9,7 @@ Handles the Event Checking Logic. Declares the sub mods checks, weather, wagon, 
 * Runs the checks to see if riders are spotted:
     * num = a random number between 1 and 10
     * a = (miles_traveled / 100 - 4)^2
-    * b = (a + 72) / (a * 12)
+    * b = (a + 72) / (a + 12)
     * c = b - 1
     * Riders spotted if num <= c
 * Runs a check to see if they _look_ hostile: random number between 1 and 10 < 8
@@ -295,3 +295,4 @@ Handles the outcomes of the player's choice and the riders' hostility.
         * Lose 20 miles
     * Final Result:
         > RIDERS WERE FRIENDLY, BUT CHECK FOR POSSIBLE LOSSES
+
